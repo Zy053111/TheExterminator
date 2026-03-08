@@ -113,7 +113,7 @@ MonoBehaviour:
   upSprite: {fileID: -703240513122613033, guid: 47dcff235a5cab54d8cc9f1b63de8ae4, type: 3}
   downSprite: {fileID: -946888270853563870, guid: 05914f865f8ac1f40aace72d3d54e5f7, type: 3}
   damagePopupPrefab: {fileID: 0}
-  expPrefab: {fileID: 214650112822691447, guid: f65753b78588826458ccf73c09a400e3, type: 3}
+  expPrefab: {fileID: 214650112822691447, guid: 3c52a2d12d2ba864b87b23993e14d946, type: 3}
   deathClip: {fileID: 8300000, guid: bd2fa99d94e17bd41af3fd1945032a79, type: 3}
   deathVolumeMin: 0.8
   deathVolumeMax: 1.2
