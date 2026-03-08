@@ -247,6 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelController
   levelDuration: 180
+  bossSpawnTime: 180
   timerText: {fileID: 989826377}
   creepPrefab: {fileID: 8321747232150372099, guid: f9cb3419e9d67464a923fff03ceed76b, type: 3}
   bossPrefab: {fileID: 0}
