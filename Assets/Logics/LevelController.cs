@@ -4,7 +4,8 @@ using UnityEngine.SceneManagement;
 using TMPro; // 必须有这一行
 public class LevelController : MonoBehaviour
 {
-    public float levelDuration = 180f; // 3分钟
+    public float levelDuration = 360f; 
+    public float bossSpawnTime = 180f; // 倒计时到 180s 时生成 Boss
     public static float TimeProgress; // 0 代表开始，1 代表结束
     private float timer;
     [Header("UI Settings")]
@@ -19,16 +20,21 @@ public class LevelController : MonoBehaviour
     public GameObject[] creepPrefabs; // 数组，可以存老鼠、蛇等多个 Prefab
     void Start()
     {
+        string sceneName = SceneManager.GetActiveScene().name;
+        if (sceneName.Equals("03_Level2_Boss"))
+        {
+            levelDuration = 360f; // Boss 关 6 分钟
+            bossSpawnTime = 180f; // 剩下 3 分钟时出 Boss
+        }
+        else
+        {
+            levelDuration = 180f; // 其他关卡（如 Level 1）默认 3 分钟
+        }
         timer = levelDuration;
         // 根据当前场景名称或索引决定生成逻辑
-        string sceneName = SceneManager.GetActiveScene().name;
+        
 
-        if (sceneName.Equals("03_Level2_Boss") || sceneName.Contains("Level3"))
-        {
-            GenerateBoss();
-        }
-
-        if (sceneName.Contains("Level1") || sceneName.Contains("Level3"))
+        if (sceneName.Contains("Level1") || sceneName.Contains("Level2") || sceneName.Contains("Level3"))
         {
             StartCoroutine(CreepSpawnerRoutine());
         }
@@ -36,11 +42,16 @@ public class LevelController : MonoBehaviour
 
     void Update()
     {
+        string sceneName = SceneManager.GetActiveScene().name;
         if (timer > 0)
         {
             timer -= Time.deltaTime;
             TimeProgress = (levelDuration - timer) / levelDuration;
             UpdateTimerUI(); // 每一帧更新时间显示
+            if (sceneName.Equals("03_Level2_Boss") && timer <= bossSpawnTime && !bossSpawned)
+            {
+                GenerateBoss();
+            }
         }
         else
         {
@@ -98,14 +109,20 @@ public class LevelController : MonoBehaviour
                 bossObj.AddComponent<BossAI>();
             }
 
+
             bossSpawned = true;
         }
     }
 
     IEnumerator CreepSpawnerRoutine()
-    {
+    {   
+        string sceneName = SceneManager.GetActiveScene().name;
         while (timer > 0)
         {
+            if (sceneName.Equals("03_Level2_Boss") && bossSpawned)
+            {
+                yield break; // 退出协程，不再生成小怪
+            }
             GenerateCreep();
             // 越接近结束，生成速度越快
             float spawnInterval = Mathf.Lerp(0.5f, 5f, timer / levelDuration);
