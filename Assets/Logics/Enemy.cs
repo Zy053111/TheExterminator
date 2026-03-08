@@ -21,8 +21,12 @@ public class Enemy : MonoBehaviour
     public GameObject damagePopupPrefab;
     private Transform playerTransform; // 存储玩家的位置引用
 
-    [Header("Loot")]
-    public GameObject expPrefab;
+    [Header("Loot & Sounds")]
+    public GameObject expPrefab;      // шар
+    public AudioClip deathClip;       // звук смерти врага
+    public float deathVolumeMin = 0.8f; // случайная громкость мин
+    public float deathVolumeMax = 1.2f; // случайная громкость макс
+    private AudioSource audioSource;
 
     void Start()
     {
@@ -96,13 +100,26 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    [Header("Audio")]
+    public float deathVolume = 1f;
+
     void Die()
     {
+        // Спавн экспы
         if (expPrefab != null)
         {
             Instantiate(expPrefab, transform.position, Quaternion.identity);
         }
+
+        // Проигрываем звук смерти врага
+        if (deathClip != null)
+        {
+            AudioSource.PlayClipAtPoint(deathClip, transform.position, deathVolume);
+        }
+
         Debug.Log("Enemy Killed");
+
+        // Уничтожаем объект
         Destroy(gameObject);
     }
 }

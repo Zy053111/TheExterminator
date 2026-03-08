@@ -310,5 +310,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BossSound
   roarClip: {fileID: 8300000, guid: 1efa2ab29dcb5224bb9d5cb89e91ed9c, type: 3}
   audioSource: {fileID: 994803734289020308}
-  minTime: 5
-  maxTime: 10
+  minTime: 4
+  maxTime: 8
