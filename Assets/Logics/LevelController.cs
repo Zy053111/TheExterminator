@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 using TMPro; // 必须有这一行
 public class LevelController : MonoBehaviour
 {
-    public float levelDuration = 360f; 
-    public float bossSpawnTime = 180f; // 倒计时到 180s 时生成 Boss
+    public float levelDuration = 270f; 
+    public float bossSpawnTime = 210f; // 倒计时到 150s 时生成 Boss
     public static float TimeProgress; // 0 代表开始，1 代表结束
     private float timer;
     [Header("UI Settings")]
@@ -23,8 +23,8 @@ public class LevelController : MonoBehaviour
         string sceneName = SceneManager.GetActiveScene().name;
         if (sceneName.Equals("03_Level2_Boss"))
         {
-            levelDuration = 360f; // Boss 关 6 分钟
-            bossSpawnTime = 180f; // 剩下 3 分钟时出 Boss
+            levelDuration = 270f; // Boss 关 6 分钟
+            bossSpawnTime = 210f; // 剩下 3 分钟时出 Boss
         }
         else
         {
