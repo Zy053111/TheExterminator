@@ -5,7 +5,7 @@ public class BossSound : MonoBehaviour
     public AudioClip roarClip;         // звук рыка
     public AudioSource audioSource;    // источник звука на боссе
     public float minTime = 5f;         // минимальный интервал между рыками
-    public float maxTime = 15f;        // максимальный интервал
+    public float maxTime = 10f;        // максимальный интервал
 
     private float timer;
 
