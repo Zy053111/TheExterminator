@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 994803734289020308}
   - component: {fileID: 2255649776856127747}
   - component: {fileID: 8335845962937070156}
+  - component: {fileID: 2733147475526357201}
   m_Layer: 0
   m_Name: GiantRatBoss
   m_TagString: Boss
@@ -171,7 +172,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -295,3 +296,19 @@ MonoBehaviour:
   right: {fileID: 8206243018296931535, guid: 26b1a3619123a9e4689a5bd49085369a, type: 3}
   venomSwampPrefab: {fileID: 2775841331389808234, guid: 954aec0d9992ca94cabfa00bdcafb087, type: 3}
   spitCooldown: 5
+--- !u!114 &2733147475526357201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874642984066313960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0426f3d8248090849bd93ca1b41e3c89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossSound
+  roarClip: {fileID: 8300000, guid: 1efa2ab29dcb5224bb9d5cb89e91ed9c, type: 3}
+  audioSource: {fileID: 994803734289020308}
+  minTime: 4
+  maxTime: 8
