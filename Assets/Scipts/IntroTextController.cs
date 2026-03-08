@@ -56,7 +56,7 @@ public class IntroTextController : MonoBehaviour
             case "02_Level1":
                 return "Level 1 — Introduction\r\n\r\nMutated creatures are swarming the area. Survive the incoming waves and use weapon pickups scattered across the map to increase your damage.\r\n\r\nDefeated enemies drop energy fragments. Collect them to fill the bar and choose one of three upgrades.\r\n\r\nStay alive until the timer runs out to reach the next area.";
             case "03_Level2_Boss":
-                return "Level 2 — Introduction\r\n\r\nThe infection is spreading and the enemy waves are growing stronger. Keep moving, collect weapon pickups, and defeat enemies to gain upgrades.\r\n\r\nAfter some time, a powerful Rat Boss will appear. Watch out for the toxic swamp pools it creates.\r\n\r\nSurvive the encounter and hold out until the timer ends.";
+                return "Level 2 — Introduction\r\n\r\nThe infection is spreading and the enemy waves are growing stronger. Keep moving, collect weapon pickups, and defeat enemies to gain upgrades, and heal yourself.\r\n\r\nAfter some time, a powerful Rat Boss will appear. Watch out for the toxic swamp pools it creates.\r\n\r\nSurvive the encounter and hold out until the timer ends.";
             default:
                 return "Welcome to the level!";
         }
