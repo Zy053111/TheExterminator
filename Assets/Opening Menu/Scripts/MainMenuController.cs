@@ -22,7 +22,7 @@ public class MainMenuController : MonoBehaviour
     }
 
     // --- 以下是原本的场景跳转逻辑 ---
-    public void StartGame() { SceneManager.LoadScene("01_OpenAnimation"); }
+    public void StartGame() { SceneManager.LoadScene("02_Level1"); }
     
     public void Level1() { SceneManager.LoadScene("02_Level1"); } // 确保名称和 Build Profiles 一致
     
