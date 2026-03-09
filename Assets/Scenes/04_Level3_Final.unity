@@ -580,7 +580,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e75af27327538034480b65683b22a932, type: 2}
   m_sharedMaterial: {fileID: -296795637363342231, guid: e75af27327538034480b65683b22a932, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: -296795637363342231, guid: e75af27327538034480b65683b22a932, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -787,6 +788,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelController
   levelDuration: 180
+  bossSpawnTime: 210
   timerText: {fileID: 828363266}
   creepPrefab: {fileID: 8321747232150372099, guid: f9cb3419e9d67464a923fff03ceed76b, type: 3}
   bossPrefab: {fileID: 3086714768036684945, guid: 7656aa86fad8a794eb39ba651ce6891e, type: 3}
@@ -926,6 +928,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   maxHp: 100
   currentHp: 100
+  attackPower: 1
+  defensePower: 5
   moveSpeed: 5
   bulletPrefab: {fileID: 6701111340854672415, guid: d6ae444e6bed80340b813cc70b1e913e, type: 3}
   bladePrefab: {fileID: 4403253054176519264, guid: 06789ac2c708f4e4795687fc9156b123, type: 3}
@@ -938,6 +942,25 @@ MonoBehaviour:
   downSprite: {fileID: 2261364357476855245, guid: 68319e726dafd85478bf881a6a756371, type: 3}
   leftSprite: {fileID: -3151985773540895183, guid: 2c5317f2b2d46a446b229b2e752bb846, type: 3}
   rightSprite: {fileID: -7145984894993698149, guid: dfbc68a6db370934eb8b5827804355cd, type: 3}
+  currentWeapon: 0
+  aerosolEffect: {fileID: 0}
+  glueEffect: {fileID: 0}
+  gasEffect: {fileID: 0}
+  weaponHoldPoint: {fileID: 0}
+  defaultShotClip: {fileID: 0}
+  aerosolShotClip: {fileID: 0}
+  glueShotClip: {fileID: 0}
+  gasShotClip: {fileID: 0}
+  damageClip: {fileID: 0}
+  deathClip: {fileID: 0}
+  shootSoundInterval: 0.2
+  levelUpManager: {fileID: 0}
+  expSlider: {fileID: 0}
+  levelText: {fileID: 0}
+  levelUpClip: {fileID: 0}
+  level: 1
+  currentExp: 0
+  expToNextLevel: 50
 --- !u!58 &1272378324
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1174,7 +1197,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e75af27327538034480b65683b22a932, type: 2}
   m_sharedMaterial: {fileID: -296795637363342231, guid: e75af27327538034480b65683b22a932, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: -296795637363342231, guid: e75af27327538034480b65683b22a932, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
